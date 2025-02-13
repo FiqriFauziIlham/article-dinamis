@@ -9,6 +9,6 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $table = 'articles'; // Nama tabel
-    protected $fillable = ['title', 'content']; // Kolom yang bisa diisi
+    protected $table = 'articles';
+    protected $fillable = ['title', 'content'];
 }

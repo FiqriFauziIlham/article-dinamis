@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\ArticleController;
 
-Route::get('/articles', [ArticleController::class, 'index']);
-Route::get('/', function () {
-    return response()->json(['message' => 'API is working']);
-});
+Route::get('/articles', [ArticleController::class, 'index']); // Mendapatkan semua artikel
+Route::get('/articles/{id}', [ArticleController::class, 'show']); // Mendapatkan satu artikel berdasarkan ID
+Route::post('/articles/create', [ArticleController::class, 'store']); // Menambahkan artikel baru
+Route::put('/articles/update/{id}', [ArticleController::class, 'update']); // Memperbarui artikel berdasarkan ID
+Route::delete('/articles/delete/{id}', [ArticleController::class, 'destroy']); // Menghapus artikel berdasarkan ID
